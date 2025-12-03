@@ -12,7 +12,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Charan290403/K8s_ci-cd_pipeline.git'
+                git branch: 'main', url: 'https://github.com/Charan290403/K8s_ci-cd_pipeline.git'
             }
         }
 
