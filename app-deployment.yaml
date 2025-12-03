@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: charanb123/cicd-demo-app:11
+          image: charanb123/cicd-demo-app:latest
           ports:
             - containerPort: 3000
 ---
@@ -23,7 +23,7 @@ kind: Service
 metadata:
   name: cicd-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: cicd-app
   ports:
