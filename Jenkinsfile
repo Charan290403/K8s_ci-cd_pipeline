@@ -41,7 +41,7 @@ pipeline {
             steps {
                 withKubeConfig([credentialsId: KUBE_CRED]) {
                     sh """
-                    sh 'kubectl apply -f app-deployment.yaml'
+                    kubectl apply -f k8s/app-deployment.yaml
                     kubectl set image deployment/cicd-app app=$DOCKER_USER/$DOCKER_IMAGE:$BUILD_NUMBER
                     kubectl rollout status deployment/cicd-app
                     """
